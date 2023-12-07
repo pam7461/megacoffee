@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./css/swiper-bundle.min.css"> 
   <title>메가MGC커피</title>
   <style>
+    /* 데스크탑 우선 */
+    
     :root{
       --main-color:#fdd000;
       font-family:'Noto Sans KR';
@@ -181,6 +183,30 @@
       height:100px;
       background:black;
     }
+
+
+
+
+    /*--------------------- 1280이하  시작--------------------*/
+    @media (max-width:1280px){
+
+    }
+    /*--------------------- 1280이하  끝--------------------*/
+
+
+
+
+
+    /*--------------------- 760이하  시작--------------------*/
+    @media (max-width:760px){
+
+    }
+    /*--------------------- 760이하  끝--------------------*/
+
+
+
+
+
   </style>
 </head>
 <body>
@@ -325,10 +351,10 @@
     secSwiper.on('slideChangeTransitionStart',function(){
       if($('.sec01').hasClass('swiper-slide-active')){
         removeActive($('.header'));
-        
+        $('#header-logo').attr('src','./images/logo-b.png');
       }else{
         setActive($('.header'));
-
+        $('#header-logo').attr('src','./images/logo.png');
       }
     })      
       //페이지네이션 생성 및 내용
