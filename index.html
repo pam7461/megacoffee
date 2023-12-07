@@ -9,6 +9,40 @@
   <link rel="stylesheet" href="./css/swiper-bundle.min.css"> 
   <title>메가MGC커피</title>
   <style>
+    :root{
+      --main-color:#fdd000;
+      font-family:'Noto Sans KR';
+      font-weight:500;
+      font-size:16px;
+      color:#333;
+      line-height:1.2;
+    }
+    .container{
+      max-width:1280px;
+      margin:0 auto;
+    }
+    .container-full{
+      max-width:100%;
+    }
+    .grid-container4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+    .grid-container8{
+      display:grid;
+      grid-template-columns:repeat(8,1fr);
+      gap:20px;
+    }
+    .grid-container12{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:20px;
+    }
+
+
+
+
     #skip-menu a{
       position:fixed;
       left:50%;
@@ -29,13 +63,8 @@
       right:0;
       top:0;
       z-index:1000;
-      height:100px;
       background:transparent;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:100px;
-      color:red;
+      
       transition:0.3s;
     }
     .header.active{
@@ -107,19 +136,29 @@
 <body>
   <div id="skip-menu"><a href="#">본문바로가기</a></div>
   <section id="wrap">
-    <header class="header">HEADER</header>
+    <header class="header">
+      <div class="container grid-container12">
+        <h1>
+          <div class="main-tit"><a href="./index.html">메가MGC커피</a></div>
+          <div class="img-box"><a href="./index.html"><img src="./images/logo-b.png" alt="메가BGC커피 로고"></a></div>
+        </h1>
+        <nav></nav>
+        <div class="sns"></div>
+        <div class="btn-nav"></div>
+      </div>
+    </header>
     <!-- Slider main container -->
     <div class="swiper sec-swiper">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper sec-swiper-wrapper">
         <!-- Slides -->
         <section class="sec sec01 main swiper-slide">
-          <div class="container">
+          <div class="container container-full">
             <h2>MAIN</h2>
           </div>          
         </section>
         <section class="sec sec02 menu swiper-slide">
-          <div class="container">
+          <div class="container container-full">
             <h2>MENU</h2>
           </div>          
         </section>
@@ -129,7 +168,7 @@
           </div>          
         </section>
         <section class="sec sec04 mega swiper-slide">
-          <div class="container">
+          <div class="container container-full">
             <h2>MEGA</h2>
           </div>          
         </section>
@@ -142,7 +181,9 @@
       <!-- If we need pagination -->
       <div class="sec-swiper-pagination swiper-pagination"></div>      
     </div>
-    <footer class="footer">FOOTER</footer>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
   </section>
 
   <script src="./js/jquery.min.js"></script>
