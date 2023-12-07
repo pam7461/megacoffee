@@ -65,6 +65,32 @@
     .sec05{
       background:lightsalmon;
     }
+    .sec-swiper-pagination{
+      right:auto !important;
+      left:40px !important;
+      top:auto !important;
+      bottom:40px !important;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet{
+      width:100px;
+      height:20px;
+      border:1px solid black;
+      border-radius:0;
+      background:transparent;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet::before{
+      content:'';
+      display:none;
+      width:10px;
+      height:2px;
+      background:#000;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet-active{
+      background:transparent;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet-active::before{
+      display:block;
+    }
 
     .footer{
       height:100px;
@@ -82,19 +108,29 @@
       <div class="swiper-wrapper sec-swiper-wrapper">
         <!-- Slides -->
         <section class="sec sec01 main swiper-slide">
-          <div class="container">SECTION01</div>          
+          <div class="container">
+            <h2>MAIN</h2>
+          </div>          
         </section>
         <section class="sec sec02 menu swiper-slide">
-          <div class="container">SECTION02</div>          
+          <div class="container">
+            <h2>MENU</h2>
+          </div>          
         </section>
         <section class="sec sec03 franchise swiper-slide">
-          <div class="container">SECTION03</div>          
+          <div class="container">
+            <h2>FRANCHISE</h2>
+          </div>          
         </section>
         <section class="sec sec04 mega swiper-slide">
-          <div class="container">SECTION04</div>          
+          <div class="container">
+            <h2>MEGA</h2>
+          </div>          
         </section>
         <section class="sec sec05 event swiper-slide">
-          <div class="container">SECTION05</div>          
+          <div class="container">
+            <h2>EVENT</h2>
+          </div>          
         </section>
       </div>
       <!-- If we need pagination -->
@@ -141,6 +177,9 @@
         setActive($('.header'));
       }
     })      
+      //페이지네이션 생성 및 내용
+    $('.sec-swiper-pagination .swiper-pagination-bullet').append('<span>내용</span>')
+    
     // ---------- 섹션 스와이프 끝 ------------
 
 
