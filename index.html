@@ -178,7 +178,10 @@
       }
     })      
       //페이지네이션 생성 및 내용
-    $('.sec-swiper-pagination .swiper-pagination-bullet').append('<span>내용</span>')
+    $('.sec-swiper-pagination .swiper-pagination-bullet').append('<span class="page-txt"></span>');
+    for(let idx=0;idx<=$('.sec').length-1;idx++){
+      $('.page-txt').eq(idx).text($('.sec h2').eq(idx).text());
+    }
     
     // ---------- 섹션 스와이프 끝 ------------
 
