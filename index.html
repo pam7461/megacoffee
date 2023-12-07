@@ -5,20 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/reset.css"> 
-  <link rel="stylesheet" href="./css/style.css"> 
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css"> 
   <title>메가MGC커피</title>
   <style>
+    #skip-menu a{
+      position:fixed;
+      left:50%;
+      top:0;
+      z-index:2000;
+      transform:translate(-50%,-110%);
+      padding:10px;
+      background:black;
+      font-size:32px;
+      color:white;
+    }
+    #skip-menu a:focus{
+      transform:translate(-50%,0);
+    }
+    .header{
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      z-index:1000;
+      height:100px;
+      background:white;
+    }
+    .sec-swiper {    
+      height: 100vh;
+    }
+    .sec{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:100px;
+    }
+    .sec01{
+      background:lightblue;
+    }
+    .sec02{
+      background:lightcoral;
+    }
+    .sec03{
+      background:lightgoldenrodyellow;
+    }
+    .sec04{
+      background:lightgreen;
+    }
+    .sec05{
+      background:lightsalmon;
+    }
 
   </style>
 </head>
 <body>
-  
+  <div id="skip-menu"><a href="#">본문바로가기</a></div>
+  <section id="wrap">
+    <header class="header">HEADER</header>
+    <!-- Slider main container -->
+    <div class="swiper sec-swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper sec-swiper-wrapper">
+        <!-- Slides -->
+        <section class="sec sec01 main swiper-slide">
+          <div class="container">SECTION01</div>          
+        </section>
+        <section class="sec sec02 menu swiper-slide">
+          <div class="container">SECTION02</div>          
+        </section>
+        <section class="sec sec03 franchise swiper-slide">
+          <div class="container">SECTION03</div>          
+        </section>
+        <section class="sec sec04 mega swiper-slide">
+          <div class="container">SECTION04</div>          
+        </section>
+        <section class="sec sec05 event swiper-slide">
+          <div class="container">SECTION05</div>          
+        </section>
+      </div>
+      <!-- If we need pagination -->
+      <div class="sec-swiper-pagination swiper-pagination"></div>      
+    </div>
+    <footer class="footer">FOOTER</footer>
+  </section>
 
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery.cookie.min.js"></script>
   <script src="./js/my-function.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
   <script>
-
+    // 섹션 스와이퍼
+    const secSwiper = new Swiper('.sec-swiper', {      
+      direction: 'vertical',
+      mousewheel:true,
+      pagination: {
+        el: '.sec-swiper-pagination',
+        clickable:true,
+      },
+    });
   </script>
 </body>
 </html>
