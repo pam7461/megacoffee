@@ -30,7 +30,16 @@
       top:0;
       z-index:1000;
       height:100px;
-      background:white;
+      background:transparent;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:100px;
+      color:red;
+      transition:0.3s;
+    }
+    .header.active{
+      background:#fff;
     }
     .sec-swiper {    
       height: 100vh;
@@ -57,6 +66,10 @@
       background:lightsalmon;
     }
 
+    .footer{
+      height:100px;
+      background:black;
+    }
   </style>
 </head>
 <body>
@@ -95,15 +108,51 @@
   <script src="./js/my-function.js"></script>
   <script src="./js/swiper-bundle.min.js"></script>
   <script>
-    // 섹션 스와이퍼
+    // --------- 섹션 스와이퍼 시작 -----------
+      //섹션 슬라이드 초기화
     const secSwiper = new Swiper('.sec-swiper', {      
       direction: 'vertical',
       mousewheel:true,
+      speed:1000,
       pagination: {
         el: '.sec-swiper-pagination',
         clickable:true,
       },
     });
+      //섹션 슬라이드 마지막 섹션 휠 잠금
+    secSwiper.on('reachEnd',function(){
+      secSwiper.mousewheel.disable();
+    })
+      //섹션 슬라이드 휠 방향에 따른 휠 잠금 방향
+    window.onwheel = function(e){      
+      if($('.sec05').hasClass('swiper-slide-active')){
+        if(e.deltaY>=0){
+          secSwiper.mousewheel.disable();
+        }else{
+          secSwiper.mousewheel.enable();
+        }
+      }
+    }
+      //섹션 슬라이드 체인지에 따른 헤더 효과
+    secSwiper.on('slideChangeTransitionStart',function(){
+      if($('.sec01').hasClass('swiper-slide-active')){
+        removeActive($('.header'));
+      }else{
+        setActive($('.header'));
+      }
+    })      
+    // ---------- 섹션 스와이프 끝 ------------
+
+
+    
+
+
+    function setActive(el){
+      el.addClass('active');
+    }
+    function removeActive(el){
+      el.removeClass('active');
+    }
   </script>
 </body>
 </html>
