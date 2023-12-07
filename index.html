@@ -29,11 +29,16 @@
       grid-template-columns:repeat(4,1fr);
       gap:20px;
     }
+    .grid-container6{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:20px;
+    }
     .grid-container8{
       display:grid;
       grid-template-columns:repeat(8,1fr);
       gap:20px;
-    }
+    }    
     .grid-container12{
       display:grid;
       grid-template-columns:repeat(12,1fr);
@@ -63,13 +68,58 @@
       right:0;
       top:0;
       z-index:1000;
-      background:transparent;
-      
+      padding:30px 0;
+      background:transparent;      
       transition:0.3s;
     }
     .header.active{
       background:#fff;
     }
+    .header .container{
+      align-items:center;
+    }
+    .header h1{
+      grid-column:1/4;
+      width:200px;
+    }
+    .header .main-tit{
+      display:none;
+    }
+    .header nav{
+      grid-column:4/10;
+    }    
+    .header .main-nav{
+      gap:0;
+      font-weight:700;
+      font-size:1.1em;
+      text-align:center;
+    }
+    .sub-nav{
+      display:none;
+    }
+
+    .header .sns{
+      grid-column:11/-1;
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .header .sns li{
+      width:44px;
+      height:44px;
+      margin-left:0.5em;
+      border:2px solid #000;
+      border-radius:50%;
+      padding:4px;
+    }
+    .header .sns li:hover{
+      border-color:var(--main-color);
+      background:var(--main-color);
+    }
+    .btn-nav{
+      display:none;
+    }
+
     .sec-swiper {    
       height: 100vh;
     }
@@ -140,11 +190,66 @@
       <div class="container grid-container12">
         <h1>
           <div class="main-tit"><a href="./index.html">메가MGC커피</a></div>
-          <div class="img-box"><a href="./index.html"><img src="./images/logo-b.png" alt="메가BGC커피 로고"></a></div>
+          <div class="img-box"><a href="./index.html"><img id="header-logo" src="./images/logo-b.png" alt="메가BGC커피 로고"></a></div>
         </h1>
-        <nav></nav>
-        <div class="sns"></div>
-        <div class="btn-nav"></div>
+        <nav>
+          <ul class="main-nav grid-container6">
+            <li>
+              <a href="#">메가 스토리</a>
+              <ul class="sub-nav">
+                <li><a href="#">브랜드</a></li>
+                <li><a href="#">BI</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메뉴소개</a>
+              <ul class="sub-nav">
+                <li><a href="#">음료</a></li>
+                <li><a href="#">푸드</a></li>
+                <li><a href="#">상품</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">매장</a>
+              <ul class="sub-nav">
+                <li><a href="#">매장찾기</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">창업안내</a>
+              <ul class="sub-nav">
+                <li><a href="#">개설비용</a></li>
+                <li><a href="#">인테리어</a></li>
+                <li><a href="#">창업문의</a></li>
+                <li><a href="#">창업뉴스</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메가소식</a>
+              <ul class="sub-nav">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">고객의 소리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">채용안내</a>
+              <ul class="sub-nav">
+                <li><a href="#">채용안내</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <ul class="sns">
+          <li><a href="#"><img src="./images/sns_blog.png" alt="blog"></a></li>
+          <li><a href="#"><img src="./images/sns_facebook.png" alt="facebook"></a></li>
+          <li><a href="#"><img src="./images/sns_instagram.png" alt="instagram"></a></li>
+        </ul>
+        <div class="btn-nav">
+          <div class="line">네비버튼</div>
+        </div>
       </div>
     </header>
     <!-- Slider main container -->
@@ -220,8 +325,10 @@
     secSwiper.on('slideChangeTransitionStart',function(){
       if($('.sec01').hasClass('swiper-slide-active')){
         removeActive($('.header'));
+        
       }else{
         setActive($('.header'));
+
       }
     })      
       //페이지네이션 생성 및 내용
