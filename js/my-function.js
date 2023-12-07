@@ -1,1 +1,6 @@
-// 아무것도 없음
+function setActive(el){
+  el.addClass('active');
+}
+function removeActive(el){
+  el.removeClass('active');
+}
