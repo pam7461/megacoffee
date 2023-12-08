@@ -409,29 +409,18 @@
     $('.header').mouseenter(function(){
       setActive($(this));
     })
-
     $('.header').mouseleave(function(){
       if($('.sec01').hasClass('swiper-slide-active')){
         removeActive($(this));
       } 
-      $('.header').css({
-        height:'100px',
-      }) 
-      $('.sub-nav').css({
-        height:'0',
-      })      
+      setHeight($('.header'),'100px');
+      setHeight($('.sub-nav'),'0');
     })
-
     $('.main-nav li').mouseenter(function(){
       setActive($(this));
-      $('.sub-nav').css({
-        height:'150px',
-      })
-      $('.header').css({
-        height:'250px',
-      })
+      setHeight($('.header'),'250px');
+      setHeight($('.sub-nav'),'150px');
     })
-
     $('.main-nav li').mouseleave(function(){
       removeActive($(this));     
     })
