@@ -282,7 +282,6 @@
         grid-template-columns:repeat(11,1fr) auto;
       }
       nav{
-        /* display:none; */
         position:fixed;
         left:0;
         right:0;
@@ -344,6 +343,23 @@
     @media (max-width:760px){
       .header h1{
         width:150px;
+      }
+      nav{
+        left:auto;
+        width:240px;
+        padding-top:110px;
+        padding-left:32.5px;
+        background-size:175px;
+        font-weight:500;
+        font-size:0.8em;
+      }
+      .header .main-nav>li{
+        padding:20px 0;
+        border:none;
+      }
+      .sub-nav{
+        position:static;
+        padding:20px 0 0 20px;
       }
       .header .sns{
         display:none;
@@ -540,6 +556,9 @@
     $('.btn-nav-close').click(function(){
       removeActive($('nav'));
     })
+    
+
+    // 모바일 내비게이션
     
   </script>
 </body>
