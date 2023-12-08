@@ -283,11 +283,16 @@
         right:0;
         top:0;
         bottom:0;
+        transform:translateX(100%);
         padding:200px 50px;
         background:#222 url('./images/logo-w.png') no-repeat center 60px;
         background-size:200px;
         color:#fff;
-      }    
+        transition:transform 0.3s;
+      }  
+      nav.active{
+        transform:translateX(0);
+      }  
       .btn-nav-close{
         display:block;
       }  
@@ -498,7 +503,12 @@
     $('.main-nav li').mouseleave(function(){
       removeActive($(this));     
     })
-
+    $('.btn-nav').click(function(){
+      setActive($('nav'));
+    })
+    $('.btn-nav-close').click(function(){
+      removeActive($('nav'));
+    })
     
   </script>
 </body>
