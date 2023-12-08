@@ -161,7 +161,7 @@
       border-color:var(--main-color);
       background:var(--main-color);
     }
-    .btn-nav{
+    .btn-nav,.btn-nav-close{
       display:none;
       flex-flow:row wrap;
       align-content:space-evenly;
@@ -169,16 +169,40 @@
       height:22px;
       cursor:pointer;
       text-indent:-9999px;
+      grid-column:12/-1;
     }
-    .btn-nav::before,.btn-nav::after{
+    .btn-nav-close{
+      position:absolute;
+      right:20px;
+      top:20px;
+      z-index:500;
+    }
+    .btn-nav::before,.btn-nav::after,
+    .btn-nav-close::before,.btn-nav-close::after{
       content:'';
       display:block;
     }
-    .btn-nav::before,.btn-nav .line,.btn-nav::after{
+    .btn-nav::before,.btn-nav .line,.btn-nav::after,
+    .btn-nav-close::before,.btn-nav-close .line,.btn-nav-close::after{
       width:100%;
       height:2px;
       background:#000;
     }
+    .btn-nav-close::before,.btn-nav-close .line,.btn-nav-close::after{
+      position:absolute;
+      top:50%;      
+      background:#fff;
+    }
+    .btn-nav-close::before{
+      transform:translateY(-50%) rotate(-45deg);
+    }
+    .btn-nav-close::after{
+      transform:translateY(-50%) rotate(45deg);
+    }
+    .btn-nav-close .line{
+      transform:translateY(-50%) scaleX(0);
+    }
+
     .sec-swiper {    
       height: 100vh;
     }
@@ -249,11 +273,26 @@
       .header{
         padding:15px 0;
       }
-      nav{
-        display:none;
+      .header .container{
+        grid-template-columns:repeat(11,1fr) auto;
       }
+      nav{
+        /* display:none; */
+        position:fixed;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        padding:200px 50px;
+        background:#222 url('./images/logo-w.png') no-repeat center 60px;
+        background-size:200px;
+        color:#fff;
+      }    
+      .btn-nav-close{
+        display:block;
+      }  
       .header .sns {
-        grid-column:10/12;
+        grid-column:8/12;
       }
       .btn-nav{
         display:flex;
@@ -267,7 +306,12 @@
 
     /*--------------------- 760이하  시작--------------------*/
     @media (max-width:760px){
-
+      .header h1{
+        width:150px;
+      }
+      .header .sns{
+        display:none;
+      }
     }
     /*--------------------- 760이하  끝--------------------*/
 
@@ -336,6 +380,9 @@
               </ul>
             </li>
           </ul>
+          <div class="btn-nav-close">
+            <div class="line">닫기</div>
+          </div>
         </nav>
         <ul class="sns">
           <li><a href="#"><img src="./images/sns_blog.png" alt="blog"></a></li>
