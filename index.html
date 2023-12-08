@@ -46,10 +46,6 @@
       grid-template-columns:repeat(12,1fr);
       gap:20px;
     }
-
-
-
-
     #skip-menu a{
       position:fixed;
       left:50%;
@@ -73,6 +69,7 @@
       padding:30px 0;
       background:transparent;      
       transition:0.3s;
+      overflow:hidden;
     }    
     .header.active{
       background:#fff;
@@ -99,6 +96,22 @@
     .header .main-nav>li{
       position:relative;
     }
+    .header .main-nav>li::before{
+      content:'';
+      display:none;
+      position:absolute;
+      left:0;
+      right:0;
+      top:-100px;
+      bottom:-300px;
+      background:var(--main-color);
+    }
+    .header .main-nav>li.active::before{
+      display:block;
+    }
+    .header .main-nav>li>a{
+      position:relative;
+    }
     .sub-nav{
       position:absolute;
       left:0;
@@ -110,7 +123,24 @@
       font-size:0.9em;
       transition:0.3s;
     }
-
+    .sub-nav li{
+      margin-bottom:0.6em;
+    }
+    .header .main-nav>li::after{
+      content:'';
+      display:block;
+      width:0;
+      height:1px;
+      background:#000;
+      position:absolute;
+      left:50%;
+      top:50px;
+      transform:translateX(-50%);
+      transition:0.3s;
+    }
+    .header .main-nav>li.active::after{
+      width:60px;
+    }
     .header .sns{
       grid-column:11/-1;
       display:flex;
@@ -232,6 +262,7 @@
         <nav>
           <ul class="main-nav grid-container6">
             <li>
+              <!-- before -->
               <a href="#">메가 스토리</a>
               <ul class="sub-nav">
                 <li><a href="#">브랜드</a></li>
@@ -392,9 +423,7 @@
     })
 
     $('.main-nav li').mouseenter(function(){
-      $(this).css({
-        background:'#ff0',
-      })
+      setActive($(this));
       $('.sub-nav').css({
         height:'150px',
       })
@@ -404,9 +433,7 @@
     })
 
     $('.main-nav li').mouseleave(function(){
-      $(this).css({
-        background:'transparent',
-      })      
+      removeActive($(this));     
     })
 
     
