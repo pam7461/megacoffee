@@ -357,9 +357,13 @@
         padding:20px 0;
         border:none;
       }
+      .header .main-nav>li.slt{
+        color:var(--main-color);
+      }
       .sub-nav{
         position:static;
         padding:20px 0 0 20px;
+        display:none;
       }
       .header .sns{
         display:none;
@@ -532,34 +536,65 @@
     }    
     // ---------- 섹션 스와이프 끝 ------------
 
-    $('.header').mouseenter(function(){
+    $('.header').mouseenter(function(){      
       setActive($(this));
     })
     $('.header').mouseleave(function(){
       if($('.sec01').hasClass('swiper-slide-active')){
         removeActive($(this));
       } 
-      setHeight($('.header'),'100px');
-      setHeight($('.sub-nav'),'0');
+      let winWidth = $(window).width();
+      if(winWidth>1280){
+        setHeight($('.header'),'100px');
+        setHeight($('.sub-nav'),'0');
+      }else if(winWidth>760){
+        setHeight($('.header'),'74px');
+        setHeight($('.sub-nav'),'auto');
+      }else{
+        setHeight($('.header'),'61px');
+        setHeight($('.sub-nav'),'auto');
+      }
     })
     $('.main-nav li').mouseenter(function(){
       setActive($(this));
-      setHeight($('.header'),'250px');
-      setHeight($('.sub-nav'),'150px');
+      let winWidth = $(window).width();
+      if(winWidth>1280){
+        setHeight($('.header'),'250px');
+        setHeight($('.sub-nav'),'150px');
+      }
     })
     $('.main-nav li').mouseleave(function(){
       removeActive($(this));     
     })
-    $('.btn-nav').click(function(){
-      setActive($('nav'));
+    $(window).resize(function(){
+      let winWidth = $(window).width();
+      if(winWidth>1280){
+        setHeight($('.header'),'100px');
+      }else if(winWidth>760){
+        setHeight($('.header'),'74px');
+        $('.sub-nav').show();
+      }else{
+        setHeight($('.header'),'61px');
+      }
     })
-    $('.btn-nav-close').click(function(){
-      removeActive($('nav'));
-    })
-    
 
     // 모바일 내비게이션
-    
+    $('.btn-nav').click(function(){      
+      setActive($('nav'));
+    })
+    $('.btn-nav-close').click(function(){      
+      removeActive($('nav'));
+    })   
+    $('.main-nav').children('li').click(function(e){
+      let winWidth = $(window).width();
+      if(winWidth<=760){
+        e.preventDefault();        
+        $(this).children('.sub-nav').slideToggle(300);
+        $(this).toggleClass('slt');
+      }else if(winWidth<=1280){
+        e.preventDefault();
+      }
+    })
   </script>
 </body>
 </html>
