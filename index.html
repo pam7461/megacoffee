@@ -315,6 +315,8 @@
     .sec02 .swiper-slide{
       border:1px solid #aaa;
       border-radius:10px;
+      width:450px;
+      overflow:hidden;
     }
     .sec02 .swiper-slide .menu-con-box{
       display:none;
@@ -341,10 +343,10 @@
     .sec02 .swiper-button-prev,
     .sec02 .swiper-button-next{
       top:100px;
-      left:360px;
+      left:500px;
     }
     .sec02 .swiper-button-next{
-      left:460px;
+      left:580px;
     }
     .sec02 .swiper-button-prev::after,
     .sec02 .swiper-button-next::after{
@@ -870,24 +872,9 @@
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        // when window width is >= 320px
-        360: {
-          slidesPerView: 2.4,
-          spaceBetween:40
-        },
-        // when window width is >= 480px
-        760: {
-          slidesPerView: 1.2,
-          spaceBetween:40
-        },
-        // when window width is >= 640px
-        1280: {
-          slidesPerView:2.2,
-          spaceBetween:20
-        }
-      }
+      },      
+      slidesPerView:'auto',
+      spaceBetween:20,      
     });
     // menu-swiper  END ---------------
 
