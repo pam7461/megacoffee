@@ -477,9 +477,28 @@
         padding:120px 40px 0;
         font-size:0.9em;
       }
+      .sec02 .swiper-slide{
+        width:420px;
+        font-size:0.9em;
+      }
+      .sec02 .swiper-button-prev,
+      .sec02 .swiper-button-next{
+        display:none;
+      }
     }
     /*--------------------- 1280이하  끝--------------------*/
 
+
+
+
+
+    /*--------------------- 1000이하  시작--------------------*/
+    @media (max-width:1000px){
+      .sec02 .swiper-slide{
+        width:92%;
+      }
+    }
+    /*--------------------- 1000이하  끝--------------------*/
 
 
 
@@ -547,6 +566,29 @@
       .art-first{
         padding:110px 20px 0;
         font-size:0.7em;
+      }
+      .sec02 .art-last{
+        padding-top:30px;
+      }
+      .sec02 .swiper-slide{
+        width:200px;
+        font-size:0.6em;
+      }
+      .sec02 .swiper-slide .menu-con-box{
+        display:block;
+        padding:1.5em;
+        background:#fff;
+      }
+      .sec02 .art-last .l-tit,
+      .sec02 .art-last .m-tit,
+      .sec02 .art-last .con-text{
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      .sec02 .art-last .con-text{
+        white-space:normal;
+        height:30px;
       }
     }
     /*--------------------- 760이하  끝--------------------*/
