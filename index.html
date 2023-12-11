@@ -306,8 +306,50 @@
       background:var(--main-color);
       font-size:1.2em;
     }
-    .sec02 .art-last{
-
+    .art-last{
+      padding-top:150px;
+    }
+    .sec02 .swiper-wrapper{
+      align-items:flex-end;
+    }
+    .sec02 .swiper-slide{
+      border:1px solid #aaa;
+      border-radius:10px;
+    }
+    .sec02 .swiper-slide .menu-con-box{
+      display:none;
+      padding:2em;
+      background:#f9f9f9;
+    }
+    .sec02 .swiper-slide-active .menu-con-box{
+      display:block;
+    }
+    .sec02 .art-last .l-tit{
+      margin-bottom:1em;
+      font-size:1.4em;
+    }
+    .sec02 .art-last .m-tit,
+    .sec02 .art-last .con-text{
+      margin-bottom:2em;
+      font-weight:400;
+      line-height:1.5;
+      color:#aaa;
+    }
+    .sec02 .art-last .con-text{
+      margin-bottom:0;
+    }
+    .sec02 .swiper-button-prev,
+    .sec02 .swiper-button-next{
+      top:100px;
+      left:360px;
+    }
+    .sec02 .swiper-button-next{
+      left:460px;
+    }
+    .sec02 .swiper-button-prev::after,
+    .sec02 .swiper-button-next::after{
+      font-size:70px;
+      color:var(--main-color);
     }
     .sec03{
       background:lightgoldenrodyellow;
@@ -691,7 +733,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-pagination"></div>
+                <!-- 이전 다음 버튼 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
             </article>
           </div>          
@@ -821,8 +865,32 @@
 
     // main-swiper END ----------------
 
-    // menu-swiper  START ----------
-    const menuSwiper = new Swiper('.menu-swiper');
+    // menu-swiper  START -------------
+    const menuSwiper = new Swiper('.menu-swiper',{       
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        360: {
+          slidesPerView: 2.4,
+          spaceBetween:40
+        },
+        // when window width is >= 480px
+        760: {
+          slidesPerView: 1.2,
+          spaceBetween:40
+        },
+        // when window width is >= 640px
+        1280: {
+          slidesPerView:2.2,
+          spaceBetween:20
+        }
+      }
+    });
+    // menu-swiper  END ---------------
+
 
     $('.header').mouseenter(function(){      
       setActive($(this));
