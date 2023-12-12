@@ -76,6 +76,7 @@
     }    
     .header.active{
       background:#fff;
+      box-shadow:0 0 5px rgba(0,0,0,0.2);
     }
     .header .container{
       align-items:center;
@@ -214,6 +215,13 @@
     }   
     .sec h2{
       display:none;
+    }
+    .btn-menu a{
+      transition:0.3s;
+    }
+    .btn-menu a:hover{
+      transform:translateY(-10px);
+      opacity:0.8;
     }
     .sec01 .main-swiper{
       width:100%;
@@ -364,9 +372,6 @@
     .sec03 .art-first .l-tit span{
       font-size:0.7em;
     }
-    /* .sec03 .iframe-box{
-      height:350px;
-    } */
     .sec03 iframe{
       height:100%;
     }
@@ -409,6 +414,15 @@
     .event-card li a{
       display:flex;
       flex-flow:column nowrap;
+    }
+    .event-card .img-box{
+      overflow:hidden;
+    }
+    .event-card .img-box img{
+      transition:0.3s;
+    }
+    .event-card .img-box img:hover{
+      transform:scale(1.1);
     }
     .card-con{      
       padding:1em;
@@ -523,22 +537,8 @@
       text-decoration:underline;
     }
 
-    .btn-menu a{
-      transition:0.3s;
-    }
-    .btn-menu a:hover{
-      transform:translateY(-10px);
-      opacity:0.8;
-    }
-    .event-card .img-box{
-      overflow:hidden;
-    }
-    .event-card .img-box img{
-      transition:0.3s;
-    }
-    .event-card .img-box img:hover{
-      transform:scale(1.1);
-    }
+    
+    
     .art-first>*{
       transform:translateY(50px);
       opacity:0;
@@ -552,6 +552,7 @@
     .sec-swiper-wrapper .swiper-slide-active .art-first>.l-tit{
       animation-delay:0.8s;
     }
+    
     .sec-swiper-wrapper .swiper-slide-active .art-first>.m-tit:nth-of-type(2){
       animation-delay:1s;
     }
@@ -560,6 +561,44 @@
     }
     .sec-swiper-wrapper .swiper-slide-active .art-first>.btn-menu{
       animation-delay:1.5s;
+    }
+    
+    .art-first .l-tit{
+      position:relative;
+    }
+    .art-first .l-tit span{
+      position:relative;
+      z-index:10;
+    }
+    .art-first .l-tit::after{
+      content:'';
+      display:block;
+      position:absolute;
+      left:-0.2em;
+      right:-0.2em;
+      bottom:0;
+      z-index:1;
+      height:0.5em;
+      background:var(--main-color);
+      transform:scaleX(0);
+      transition:0.4s 1.1s;
+    }
+    .sec-swiper-wrapper .swiper-slide-active .art-first .l-tit::after{
+      transform:scaleX(1);
+    }
+
+    .franchise .art-first .l-tit::after{
+      right:50%;
+      height:1em;
+      background:#fff;
+    }
+    .mega .art-first .l-tit::after{
+      right:auto;
+      width:3em;
+    }
+    .event .art-first .l-tit::after{
+      left:35%;
+      right:35%;
     }
 
 
@@ -963,7 +1002,7 @@
             <h2>MENU</h2>
             <article class="art art01 art-first">
               <p class="m-tit">귀여운 악당 미니언즈의 우당탕탕</p>
-              <h3 class="l-tit">Happy MEGA Party</h3>
+              <h3 class="l-tit"><span>Happy MEGA Party</span></h3>
               <p class="m-tit">메가MGC커피와 미니언즈가 함께하는 겨울 신메뉴</p>
               <p class="con-txt">
                 미니언즈를 닮은 홀케이크부터 음료, 귀여운 굿즈까지
@@ -1071,7 +1110,7 @@
             <h2>MEGA</h2>
             <article class="art art01 art-first">
               <p class="m-tit">메가MGC커피 이야기</p>
-              <h3 class="l-tit">MEGA SIZE & 2 SHOT</h3>
+              <h3 class="l-tit"><span>MEGA SIZE & 2 SHOT</span></h3>
               <p class="m-tit">100% 프리미엄 아라비카 원두를 로스팅하여, 깊고 부드러운 커피와 빅 사이즈로 구성된 다양한 음료를 합리적인 가격으로 제공합니다.</p>
               <p class="con-txt">좋은 품질의 재료를, 합리적인 가격으로 제공하여 좋은 품질의 음료를 저렴한 가격으로 만나보실 수 있습니다.</p>
               <div class="btn-menu">
@@ -1089,7 +1128,7 @@
             <h2>EVENT</h2>
             <article class="art art01 art-first">
               <p class="m-tit">메가MGC커피 소식</p>
-              <h3 class="l-tit">MEGA EVENT</h3>              
+              <h3 class="l-tit"><span>MEGA EVENT</span></h3>              
               <ul class="event-card">
                 <li>
                   <a href="#">
