@@ -389,8 +389,40 @@
       background:url('./images/back-img.jpg') no-repeat center;
       background-size:cover;
     }
-    .sec05{
-      background:lightsalmon;
+    .sec05 .art-first{
+      width:100%;
+      padding-left:40px;
+      text-align:center;
+    }
+    .event-card{
+      max-width:1000px;
+      margin:0 auto 3em;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .event-card li{
+      border:1px solid #eee;
+      border-radius:10px;
+      overflow:hidden;      
+    }
+    .event-card li a{
+      display:flex;
+      flex-flow:column nowrap;
+    }
+    .card-con{      
+      padding:1em;
+      font-weight:300;
+      font-size:1.2em;
+      text-align:left;
+    }
+    .card-tit{
+      margin-bottom:1.5em;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+    .card-date{
+      font-size:0.8em;
     }
     .sec-swiper-pagination{
       right:auto !important;
@@ -527,6 +559,9 @@
       .sec02 .swiper-slide{
         width:92%;
       }
+      .event-card{
+        font-size:0.9em;
+      }
     }
     /*--------------------- 1000이하  끝--------------------*/
 
@@ -656,6 +691,21 @@
         transform:translateY(-15vh);
         height:65vh;   
         opacity:0.1;     
+      }
+      .event-card li{
+        grid-column:1/-1;        
+      }
+      .event-card li a{     
+        flex-flow:row nowrap;
+      }
+      .event-card .img-box{
+        width:120px;
+      }
+      .event-card .card-con{
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content:space-between;
+        font-size:1rem;
       }
     }
     /*--------------------- 760이하  끝--------------------*/
