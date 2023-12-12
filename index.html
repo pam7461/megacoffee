@@ -456,7 +456,9 @@
     .sec-swiper-pagination .swiper-pagination-bullet-active::before{
       display:block;
     }
-
+    .footer{
+      color:#fff;
+    }
     .footer-top{
       padding:1.5em 0;
       background:var(--main-color);
@@ -467,6 +469,45 @@
     .footer-top li{
       margin-right:2em;
     }
+    .footer-bottom{
+      padding:2em 0;
+      background:#333;
+    }
+    .footer-bottom .container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+    .footer-left .row{
+      display:flex;
+      justify-content:flex-start;      
+      align-items:center;
+      margin-bottom:2em;
+    }
+    .footer-left .img-box:nth-of-type(1){
+      width:200px;
+      margin-right:20px;
+    }
+    .footer-left .img-box:nth-of-type(2),
+    .footer-left .img-box:nth-of-type(3),
+    .footer-left .img-box:nth-of-type(4){
+      width:40px;
+      height:40px;
+      margin-right:10px;
+      border-radius:50%;
+      background:#fff;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .footer-left address{      
+      display:grid;
+      grid-template-columns:1fr;
+      gap:0.5em;
+      font-weight:300;
+      font-size:0.8em;
+    }
+
 
 
 
@@ -552,10 +593,22 @@
       .sec02 .swiper-button-prev,
       .sec02 .swiper-button-next{
         display:none;
-      }
+      }      
       .footer-top ul{
         justify-content:center;
         font-size:0.8em;
+      }
+      .footer-bottom .container{
+        grid-template-columns:1fr;
+      }
+      .footer-left .row{
+        justify-content:center;
+      }
+      .footer-left address{
+        display:block;
+        font-size:0.8em;
+        text-align:center;
+        line-height:1.4;
       }
       .footer-right{
         display:none;
@@ -720,6 +773,20 @@
         justify-content:space-between;
         font-size:1rem;
       }
+      .footer-left .img-box:nth-of-type(1){
+        width:150px;
+      }
+      .footer-left .img-box:nth-of-type(2),
+      .footer-left .img-box:nth-of-type(3),
+      .footer-left .img-box:nth-of-type(4){
+        width:32px;
+        height:32px;
+        margin-right:8px;
+      }
+      .footer-left a{
+        width:80%;
+      }
+      
     }
     /*--------------------- 760이하  끝--------------------*/
 
@@ -1005,8 +1072,24 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-left"></div>
-        <div class="footer-right"></div>
+        <div class="container">
+          <div class="footer-left">
+            <div class="row">
+              <div class="img-box"><img src="./images/logo-w.png" alt="로고"></div>
+              <div class="img-box"><a href="#"><img src="./images/sns_blog.png" alt="블로그"></a></div>
+              <div class="img-box"><a href="#"><img src="./images/sns_facebook.png" alt="패이스북"></a></div>
+              <div class="img-box"><a href="#"><img src="./images/sns_instagram.png" alt="인스타그램"></a></div>
+            </div>
+            <address>
+              <span><b>주식회사 앤하우스</b> &nbsp;대표자 김대영 &nbsp;창업상담 1588-0656 &nbsp;고객센터 1588-8298 &nbsp;FAX 02-325-5199</span>
+              <span>사업자등록번호 105-87-51367 &nbsp;서울특별시 강남구 강남대로 518 11층, 13층 (주)앤하우스</span>
+              <span>개인정보보호 관리책임자 이호민</span>
+            </address>
+          </div>
+          <div class="footer-right">
+
+          </div>
+        </div>
       </div>
     </footer>
   </section>
