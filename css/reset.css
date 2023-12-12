@@ -3,6 +3,7 @@ html,head,title,body,div,span,header,section,article,aside,footer,main,strong,h1
   box-sizing:border-box;  
   margin:0;
   padding:0;
+  /* word-break:keep-all;  */
 }
 h1,h2,h3,h4,h5,h6{
   font-weight:inherit;

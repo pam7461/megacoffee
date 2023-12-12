@@ -10,3 +10,7 @@ function setHeight(el,tHeight){
     height:tHeight,
   })
 }
+
+function autoHeight(widthValue){
+  return widthValue * 0.5645;
+}
