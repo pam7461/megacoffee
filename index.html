@@ -378,6 +378,9 @@
       color:#fff;
       text-align:center;
     }
+    .sec04 .art-first{
+      padding-top:300px;
+    }
     .sec04 .btn-menu a{
       margin-right:1em;
     }
@@ -638,12 +641,21 @@
       }
       .sec04 .art-first{
         margin-bottom:2em;
+        position:relative;
+        z-index:10;
       }
       .sec04 .btn-menu{
         font-size:inherit;
       }
       .sec04 .btn-menu a{
         padding:1em 2em;
+      }
+      .sec04 .art-last{
+        position:relative;
+        z-index:1;
+        transform:translateY(-15vh);
+        height:65vh;   
+        opacity:0.1;     
       }
     }
     /*--------------------- 760이하  끝--------------------*/
@@ -880,19 +892,40 @@
           <div class="container">
             <h2>EVENT</h2>
             <article class="art art01 art-first">
-              <p class="m-tit">귀여운 악당 미니언즈의 우당탕탕</p>
-              <h3 class="l-tit">Happy MEGA Party</h3>
-              <p class="m-tit">메가MGC커피와 미니언즈가 함께하는 겨울 신메뉴</p>
-              <p class="con-txt">
-                미니언즈를 닮은 홀케이크부터 음료, 귀여운 굿즈까지
-                <br>
-                연말 연시 파티는 가까운 메가MGC커피에서 즐겨보세요!
-              </p>
-              <div class="btn-menu"><a href="#">메뉴 더보기</a></div>
-            </article>
-            <article class="art art02 art-last">
-              
-            </article>
+              <p class="m-tit">메가MGC커피 소식</p>
+              <h3 class="l-tit">MEGA EVENT</h3>              
+              <ul class="event-card">
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/img-event01.jpg" alt="event01"></div>
+                    <div class="card-con">
+                      <h3 class="card-tit">메가 MGC커피X미니언즈 시즌</h3>
+                      <p class="card-date">2023-12-06</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/img-event02.jpg" alt="event02"></div>
+                    <div class="card-con">
+                      <h3 class="card-tit">겨울시즌 오픈 기념 이벤트</h3>
+                      <p class="card-date">2023-10-25</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/img-event03.jpg" alt="event03"></div>
+                    <div class="card-con">
+                      <h3 class="card-tit">[이벤트] 메가 MGC커피 X 우주</h3>
+                      <p class="card-date">2023-09-25</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <p class="con-txt">전체 매장 및 각 매장에서 다양한 이벤트가 진행중 입니다.</p>
+              <div class="btn-menu"><a href="#">이벤트 더보기</a></div>
+            </article>            
           </div>          
         </section>
       </div>
