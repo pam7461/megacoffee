@@ -18,6 +18,7 @@
       font-size:16px;
       color:#333;
       line-height:1.2;
+      word-break:keep-all;
     }
     .container{
       max-width:1280px;
@@ -357,6 +358,9 @@
     .sec03{
       background:var(--main-color);
     }
+    .sec03 .art{
+      padding-top:250px;
+    }
     .sec03 .art-first .l-tit span{
       font-size:0.7em;
     }
@@ -374,9 +378,13 @@
       color:#fff;
       text-align:center;
     }
-
-    .sec04{
-      background:lightgreen;
+    .sec04 .btn-menu a{
+      margin-right:1em;
+    }
+    .sec04 .art-last{
+      height:100vh;
+      background:url('./images/back-img.jpg') no-repeat center;
+      background-size:cover;
     }
     .sec05{
       background:lightsalmon;
@@ -520,6 +528,17 @@
     /*--------------------- 1000이하  끝--------------------*/
 
 
+    /*--------------------- 840이하  시작--------------------*/
+    @media (max-width:840px){
+      .sec04 .btn-menu{
+        font-size:0.9em;
+      }
+      .sec04 .btn-menu a{
+        padding:0.9em 1.8em;
+      }
+    }
+    /*--------------------- 840이하  띁--------------------*/
+
 
 
     /*--------------------- 760이하  시작--------------------*/
@@ -609,9 +628,22 @@
         white-space:normal;
         height:30px;
       }
+      .sec03 .art-first{
+        padding-top:80px;
+      }
       .sec03 .art-last{
         padding-left:10px;
         padding-right:10px;
+        padding-top:0;
+      }
+      .sec04 .art-first{
+        margin-bottom:2em;
+      }
+      .sec04 .btn-menu{
+        font-size:inherit;
+      }
+      .sec04 .btn-menu a{
+        padding:1em 2em;
       }
     }
     /*--------------------- 760이하  끝--------------------*/
@@ -813,9 +845,7 @@
             <article class="art art01 art-first">
               <p class="m-tit">거품없는 창업비용</p>
               <h3 class="l-tit">
-                FRANCHISE<br>
-                MEGA MGC <br>
-                COFFEE<br>
+                FRANCHISE MEGA MGC COFFEE<br>
                 <span>5,817<span>만원</span></span>
               </h3>
               <p class="m-tit">지금, 메가MGC커피에서 창업성공 스토리를 경험해보세요.</p>
@@ -832,18 +862,17 @@
           <div class="container container-full">
             <h2>MEGA</h2>
             <article class="art art01 art-first">
-              <p class="m-tit">귀여운 악당 미니언즈의 우당탕탕</p>
-              <h3 class="l-tit">Happy MEGA Party</h3>
-              <p class="m-tit">메가MGC커피와 미니언즈가 함께하는 겨울 신메뉴</p>
-              <p class="con-txt">
-                미니언즈를 닮은 홀케이크부터 음료, 귀여운 굿즈까지
-                <br>
-                연말 연시 파티는 가까운 메가MGC커피에서 즐겨보세요!
-              </p>
-              <div class="btn-menu"><a href="#">메뉴 더보기</a></div>
+              <p class="m-tit">메가MGC커피 이야기</p>
+              <h3 class="l-tit">MEGA SIZE & 2 SHOT</h3>
+              <p class="m-tit">100% 프리미엄 아라비카 원두를 로스팅하여, 깊고 부드러운 커피와 빅 사이즈로 구성된 다양한 음료를 합리적인 가격으로 제공합니다.</p>
+              <p class="con-txt">좋은 품질의 재료를, 합리적인 가격으로 제공하여 좋은 품질의 음료를 저렴한 가격으로 만나보실 수 있습니다.</p>
+              <div class="btn-menu">
+                <a href="#">브랜드 소개</a>
+                <a href="#">창업 문의</a>
+              </div>
             </article>
             <article class="art art02 art-last">
-              
+              배경
             </article>
           </div>          
         </section>
